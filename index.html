@@ -1,26 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snow Falling</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-    <div class="snow"></div>
-    <script>
-        function createSnow(){
-            const el=document.createElement('div');
-            el.classList.add('snow');
-            el.style.marginLeft = randomPosition() + 'px';
-            document.body.appendChild(el);
-        }
-        function randomPosition(){
-            return Math.floor(Math.random() * window.innerWidth);
-        }
-        for(let i=0; i<300; i++){
-        createSnow();
-        }
-    </script>
+    <canvas id="canvas"></canvas>
+    <script src="main.js"></script>
 </body>
 </html>
