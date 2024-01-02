@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Dolist</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        input {
+            width: calc(100% - 20px); /* 여백 조정 */
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        button {
+            display: block;
+            width: 50%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            margin-left: auto;
+            margin-top: 10px; /* 버튼 위쪽 여백 추가 */
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .list {
+            margin-top: 20px;
+        }
+        
+        .list div {
+            font-weight: bold;
+            font-size: 25px;
+            background-color: #eee;
+            padding: 5px;
+            margin-bottom: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .list div:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>할일 리스트</h1>
+            <div>
+                <input type="text" id="todoInput">
+            </div>
+            <button onclick="addTodo()" class="plus">추가하기</button>
+            <div class="list"></div>
+        </div>
+    </div>
+    <script>
+        let todoCount = 0;
+
+        function addTodo() {
+            const todoInput = document.querySelector('input')
+            const todoText = todoInput.value;
+            const todo = document.createElement('div')
+            todo.className = "DoIt";
+            todo.textContent = ++todoCount + ". " + todoText;
+            document.querySelector('.list').appendChild(todo);
+        }
+    </script>
+</body>
+
+</html>
